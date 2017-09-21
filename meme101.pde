@@ -20,6 +20,24 @@ void setup()
  
 void draw()
 { 
+  
+   if (mousePressed == true){
+  if(mouseX> -573 && mouseX< - 509 && mouseY> -275 && mouseY< -255){
+   println("meme00");
+    if ( player.isPlaying() )
+  {
+    player.pause();
+    mode = false;
+  } else
+  {
+    player.play();
+    mode = true;
+  }
+  }
+   }
+  
+  
+  
   beat.detect(player.mix);
   fill(#5b849f, 20);
   noStroke();
@@ -42,10 +60,10 @@ void draw()
   {
     //float x2 = (r + player.left.get(i)*100)*cos(i*2*PI/bsize);
     //float y2 = (r + player.left.get(i)*100)*sin(i*2*PI/bsize);
-    float x3 = (r + player.left.get(i)*100)*cos(i*PI/bsize);
-    float y3 = (r + player.left.get(i)*100)*sin(i*PI/bsize);
-    float x4 = (-r + player.left.get(i)*100)*cos(i*PI/bsize);
-    float y4 = (-r + player.left.get(i)*100)*sin(i*PI/bsize);
+    //float x3 = (r + player.left.get(i)*100)*cos(i*PI/bsize);
+    //float y3 = (r + player.left.get(i)*100)*sin(i*PI/bsize);
+    //float x4 = (-r + player.left.get(i)*100)*cos(i*PI/bsize);
+    //float y4 = (-r + player.left.get(i)*100)*sin(i*PI/bsize);
     float x5 = (r + player.left.get(i)*100)*cos(i*PI/bsize);
     float y5 = (r + player.left.get(i)*100)*sin(i*PI/bsize);
     fill(-100, 50);
@@ -60,10 +78,44 @@ void draw()
     //stroke(-100, 50);
     //point(x2, y2);
     //stroke(#9b2c42);
-    point(y4, x4);
+    //point(y4, x4);
     //vertex(y4, x4);
   }
   endShape();
+  
+  
+  beginShape();
+  //noFill();
+  stroke(-100, 50);
+  for (int i = 0; i < bsize; i+=30)
+  {
+    //float x2 = (r + player.left.get(i)*100)*cos(i*2*PI/bsize);
+    //float y2 = (r + player.left.get(i)*100)*sin(i*2*PI/bsize);
+    //float x3 = (r + player.left.get(i)*100)*cos(i*PI/bsize);
+    //float y3 = (r + player.left.get(i)*100)*sin(i*PI/bsize);
+    float x4 = (-r + player.left.get(i)*100)*cos(i*PI/bsize);
+    float y4 = (-r + player.left.get(i)*100)*sin(i*PI/bsize);
+    //float x5 = (r + player.left.get(i)*100)*cos(i*PI/bsize);
+    //float y5 = (r + player.left.get(i)*100)*sin(i*PI/bsize);
+    //fill(-100, 50);
+    noFill();
+    stroke(-100, 50);
+    //vertex(x2, y2);
+    // GOOD ONE vertex(x3, y3);
+    
+    //vertex(y5,x5);
+    //stroke(-1);
+    stroke(#9b2c42);
+    strokeWeight(20);
+    //stroke(-100, 50);
+    //point(x2, y2);
+    //stroke(#9b2c42);
+    //point(y4, x4);
+    vertex(y4, x4);
+  }
+  endShape();
+  
+  
   rotate(-PI/2);
   
    boolean flag =true;
@@ -92,7 +144,15 @@ void draw()
       rect(-619, -275, 3, 20);
     }
   }
-void keyPressed()
+  
+  
+  
+  
+  
+  
+  
+  
+/*void keyPressed()
 {
   if ( player.isPlaying() )
   {
@@ -103,7 +163,7 @@ void keyPressed()
     player.play();
     mode = true;
   }
-}
+}*/
  
  
  
